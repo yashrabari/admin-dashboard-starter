@@ -1,10 +1,12 @@
-const BASE_URL = 'https://api.github.com/';
+import axios from 'axios'
+
+
+const BASE_URL = process.env.PROD ? 'https://api.e-reads.in' : 'http://178.18.250.242:5001';
 
 
 
 
-export const checkServer = async () => {
-    const response = await fetch(BASE_URL + '/api/checkServer');
-    const body = await response.json();
-    return body;
+export const CheckServer = async () => {
+    const response = await axios.get(BASE_URL + '/test-server');
+    return response;
 }

@@ -1,0 +1,27 @@
+-------------------- Auto-Git Log --------------------
+		Tue Apr 05 2022 14:32:11 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/components/SideNav.js
+* src/context/MainContext.js
+* src/routes.js
+
+
+Created files:
+* src/api/index.js
+* src/pages/approve-users.js
+* src/pages/courses.js
+* src/pages/faculties.js
+* src/pages/me.js
+* src/pages/reports.js
+* src/pages/users.js
+
+
+Deleted files:
+* src/api/parts.js
+* src/api/schools.js
+* src/api/services.js
+
+
+Renamed files:

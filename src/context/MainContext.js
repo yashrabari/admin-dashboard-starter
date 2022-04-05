@@ -1,5 +1,10 @@
-import React from 'react'
-
+import React, {
+    useEffect,
+    useState,
+} from 'react'
+import {
+    CheckServer
+} from '../api/index'
 
 
 //create context
@@ -10,15 +15,30 @@ export const MainContext = React.createContext();
 export const MainContextProvider = (props) => {
 
     //create state
-    const [state, setState] = React.useState({
+    const [state, setState] = useState({
         isLoggedIn: false,
         user: {},
-        isLoading: false,
+        isLoading: true,
     });
 
 
     useEffect(() => {
+        //check if backend server is active or not
+        try {
+            CheckServer().then(response => {
+                if (response.data.status === 'success') {
+                    setState({
+                        ...state,
+                        isLoading: false,
+                    });
+                }
+            }).catch(error => {
+                console.log(error);
+            });
 
+        } catch (error) {
+            console.log(error);
+        }
     }, []);
 
 
@@ -38,7 +58,7 @@ export const MainContextProvider = (props) => {
 
     return (
         <MainContext.Provider value={{
-
+            isLoading: state.isLoading
         }}>
             {props.children}
         </MainContext.Provider>

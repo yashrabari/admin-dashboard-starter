@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 
 
 //importing context
 import routes from '../routes';
+import { MainContext } from '../context/MainContext';
 
 export default function SideNav({ children }) {
+
+
+    const { isLoading } = useContext(MainContext)
 
 
     return (
@@ -55,7 +59,9 @@ export default function SideNav({ children }) {
                 <div className="max-w-7xl mx-auto">
                     {/* Replace with your content */}
                     <div className="px-4 py-6 sm:px-0">
-                        {children}
+                        {
+                            isLoading ? <div>Loading...</div> : <div>{children}</div>
+                        }
                     </div>
                     {/* /End replace */}
                 </div>
