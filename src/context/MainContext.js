@@ -9,14 +9,36 @@ export const MainContext = React.createContext();
 
 export const MainContextProvider = (props) => {
 
-    const [name, setName] = React.useState("Yash Rabari");
+    //create state
+    const [state, setState] = React.useState({
+        isLoggedIn: false,
+        user: {},
+        isLoading: false,
+    });
 
+
+    useEffect(() => {
+
+    }, []);
+
+
+
+    useEffect(() => {
+        //check if user is logged in
+        if (localStorage.getItem('user')) {
+            setState({
+                ...state,
+                isLoggedIn: true,
+                user: JSON.parse(localStorage.getItem('user')),
+            });
+        }
+    }, []);
 
 
 
     return (
         <MainContext.Provider value={{
-            name, setName
+
         }}>
             {props.children}
         </MainContext.Provider>

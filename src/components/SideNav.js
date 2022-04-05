@@ -18,7 +18,7 @@ export default function SideNav({ children }) {
             </label>
             <header className="bg-gray-600 text-gray-100 flex justify-between md:hidden" data-dev-hint="mobile menu bar">
                 <a href="#" className="block p-4 text-white font-bold whitespace-nowrap truncate">
-                    Project Name
+                    E Reads
                 </a>
                 <label htmlFor="menu-open" id="mobile-menu-button" className="m-2 p-2 focus:outline-none hover:text-white hover:bg-gray-700 rounded-md">
                     <svg id="menu-open-icon" className="h-6 w-6 transition duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
