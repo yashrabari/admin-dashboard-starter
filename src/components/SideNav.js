@@ -1,18 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 
-//importing style module
-import Styles from '../styles/SideBar.module.css'
-
-
 
 //importing context
-import { MainContext } from '../context/MainContext';
 import routes from '../routes';
 
 export default function SideNav({ children }) {
 
-    const { name } = React.useContext(MainContext);
 
     return (
         <div className="relative min-h-screen md:flex" data-dev-hint="container">
@@ -41,7 +35,7 @@ export default function SideNav({ children }) {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                         </svg>
-                        <span className="text-2xl font-extrabold whitespace-nowrap truncate">AAIMA SSA </span>
+                        <span className="text-2xl font-extrabold whitespace-nowrap truncate">Project Name</span>
                     </a>
                     <nav data-dev-hint="main navigation">
                         {
